@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mayre suite should choose if render any component with a function condition through \`when\` 1`] = `
+<Mayre
+  of={[Function]}
+  when={[Function]}
+/>
+`;
+
+exports[`Mayre suite should not render any component with a negative condition through \`when\` 1`] = `
+<Mayre
+  of={[Function]}
+  when={true}
+/>
+`;
+
+exports[`Mayre suite should render any component through \`of\` 1`] = `
+<Mayre
+  of={[Function]}
+/>
+`;
+
+exports[`Mayre suite should render any component with a positive condition through \`when\` 1`] = `
+<Mayre
+  of={[Function]}
+  when={false}
+/>
+`;
+
+exports[`Mayre suite should render any component with props through \`with\` 1`] = `
+<Mayre
+  of={[Function]}
+  with={
+    Object {
+      "name": "Gamora",
+    }
+  }
+/>
+`;
