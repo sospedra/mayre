@@ -4,7 +4,7 @@ import babel from 'rollup-plugin-babel'
 import uglify from 'rollup-plugin-uglify'
 
 export default {
-  entry: 'index.js',
+  entry: 'src/index.js',
   format: 'cjs',
   plugins: [
     resolve(),
@@ -12,5 +12,5 @@ export default {
     babel({ exclude: 'node_modules/**' }),
     uglify()
   ],
-  dest: 'bundle.min.js',
+  dest: 'build/bundle.min.js',
 }
