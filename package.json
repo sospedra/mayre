@@ -48,6 +48,9 @@
   "standard": {
     "ignore": "demo"
   },
+  "jest": {
+   "testPathIgnorePatterns": ["<rootDir>/demo"]
+  },
   "scripts": {
     "build": "rollup -c",
     "pretest": "npm run build",
