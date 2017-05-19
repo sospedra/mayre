@@ -10,7 +10,12 @@ export default {
   moduleName: 'mayre',
   plugins: [
     resolve(),
-    commonjs(),
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/react/react.js': ['createElement']
+      }
+    }),
     babel({ exclude: 'node_modules/**' }),
     uglify()
   ],
