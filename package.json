@@ -42,7 +42,8 @@
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-uglify": "^1.0.2"
+    "rollup-plugin-uglify": "^1.0.2",
+    "standard": "^10.0.2"
   },
   "scripts": {
     "build": "rollup -c",
