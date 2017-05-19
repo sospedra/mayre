@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/sospedra/mayre#readme",
   "dependencies": {
-    "lodash.isfunction": "^3.0.8",
     "prop-types": "^15.5.10",
     "react": "^15.5.4"
   },
