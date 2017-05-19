@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import isFunction from 'lodash.isfunction'
+
+const isFunction = (target) => {
+ return target && ({}).toString.call(target) === '[object Function]'
+}
 
 const Mayre = (props) => {
   const canRender = isFunction(props.when) ? props.when() : props.when
@@ -9,7 +12,6 @@ const Mayre = (props) => {
 }
 
 Mayre.defaultProps = {
-  when: true,
   with: {},
 }
 
