@@ -12,8 +12,8 @@ While working with React you'll find yourself making conditionals
 components quite a lot of times. And they're always the same: a component which
 upon a set of conditions may render or just return null (or short-circuit it).
 
-Here comes Mayre (May**b**e render)! A very simple and ultra light component
-tackle this issue from the render function.
+Here comes Mayre (May**b**e render)! A very simple and ultra light (4k) component
+to tackle this issue from the `jsx` side.
 
 ### Usage
 
