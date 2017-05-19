@@ -47,7 +47,8 @@
   "scripts": {
     "build": "rollup -c",
     "pretest": "npm run build",
-    "test": "npm run test:unit",
+    "test": "npm run test:style && npm run test:unit",
+    "test:style": "standard",
     "test:unit": "jest"
   }
 }

@@ -1,3 +1,4 @@
+/* global describe, expect, it */
 import React from 'react'
 import { render } from 'enzyme'
 
@@ -23,7 +24,7 @@ describe('Mayre suite', () => {
 
   it('should render any component with props through `with`', () => {
     const name = 'Gamora'
-    const wrapper = render(<Mayre of={Tryout} when with={{ name }}/>)
+    const wrapper = render(<Mayre of={Tryout} when with={{ name }} />)
 
     expect(wrapper.find('#tryout').length).toBe(1)
     expect(wrapper.find('#tryout').text()).toBe(name)

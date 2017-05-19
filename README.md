@@ -4,6 +4,7 @@ Mayre
 Maybe render a React component, maybe not 😮
 
 [![Build Status](https://travis-ci.org/sospedra/mayre.svg?branch=master)](https://travis-ci.org/sospedra/mayre)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 While working with React you'll find yourself making conditionals
 components quite a lot of times. And they're always the same: a component which

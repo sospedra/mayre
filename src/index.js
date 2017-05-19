@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const isFunction = (target) => {
- return target && ({}).toString.call(target) === '[object Function]'
+  return target && ({}).toString.call(target) === '[object Function]'
 }
 
 const Mayre = (props) => {
@@ -12,7 +12,7 @@ const Mayre = (props) => {
 }
 
 Mayre.defaultProps = {
-  with: {},
+  with: {}
 }
 
 Mayre.propTypes = {
@@ -21,7 +21,7 @@ Mayre.propTypes = {
     PropTypes.bool,
     PropTypes.func
   ]),
-  with: PropTypes.object,
+  with: PropTypes.object
 }
 
 export default Mayre

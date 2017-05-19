@@ -14,5 +14,5 @@ export default {
     babel({ exclude: 'node_modules/**' }),
     uglify()
   ],
-  sourceMap: true,
+  sourceMap: true
 }
