@@ -27,5 +27,5 @@ There are three props you can use: `of`, `when` and `whith`.
 | Name | Required | Default   | Comment                              |
 |------|----------|-----------|--------------------------------------|
 | of   | Yes      | -         | The React component to be rendered   |
-| when | No       | `true`    | The render condition                 |
+| when | No       | `false`   | The render condition                 |
 | with | No       | `{}`      | Props to be passed to `of` component |

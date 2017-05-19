@@ -16,7 +16,7 @@ Mayre.defaultProps = {
 }
 
 Mayre.propTypes = {
-  of: PropTypes.func,
+  of: PropTypes.func.isRequired,
   when: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func
