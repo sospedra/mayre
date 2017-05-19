@@ -1,4 +1,4 @@
-const { cloneElement } = require('react')
+const { createElement } = require('react')
 const PropTypes = require('prop-types')
 
 const isFunction = (target) => {
@@ -8,7 +8,7 @@ const isFunction = (target) => {
 const Mayre = (props) => {
   const canRender = isFunction(props.when) ? props.when() : props.when
 
-  return canRender ? cloneElement(props.of, props.with) : null
+  return canRender ? createElement(props.of, props.with) : null
 }
 
 Mayre.defaultProps = {
