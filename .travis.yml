@@ -6,3 +6,9 @@ node_js:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+addons:
+  code_climate:
+    repo_token: CODECLIMATE
+after_success:
+  - yarn global add codeclimate-test-reporter
+  - codeclimate-test-reporter < lcov.info
