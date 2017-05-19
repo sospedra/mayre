@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+const { cloneElement } = require('react')
+const PropTypes = require('prop-types')
 
 const isFunction = (target) => {
   return target && ({}).toString.call(target) === '[object Function]'
@@ -8,7 +8,7 @@ const isFunction = (target) => {
 const Mayre = (props) => {
   const canRender = isFunction(props.when) ? props.when() : props.when
 
-  return canRender ? <props.of {...props.with} /> : null
+  return canRender ? cloneElement(props.of, props.with) : null
 }
 
 Mayre.defaultProps = {
