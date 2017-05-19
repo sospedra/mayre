@@ -22,6 +22,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "jest"
+    "pretest": "npm run build",
+    "test": "npm run test:unit",
+    "test:unit": "jest"
   }
 }
