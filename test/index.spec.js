@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'enzyme'
 
-import Mayre from '../build/mayre.min'
+import Mayre from '../dist/mayre.min'
 
 const Tryout = (props) => <p id='tryout'>{props.name}</p>
 
