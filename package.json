@@ -50,6 +50,6 @@
     "pretest": "npm run build",
     "test": "npm run test:style && npm run test:unit",
     "test:style": "standard",
-    "test:unit": "jest"
+    "test:unit": "jest --collectCoverage"
   }
 }
