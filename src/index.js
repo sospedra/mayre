@@ -1,4 +1,4 @@
-const { createElement } = require('react')
+const { cloneElement } = require('react')
 const PropTypes = require('prop-types')
 
 const isFunction = (target) => {
@@ -7,8 +7,9 @@ const isFunction = (target) => {
 
 const Mayre = module.exports = (props) => {
   const canRender = isFunction(props.when) ? props.when() : props.when
+  const element = isFunction(props.of) ? props.of(props.with) : props.of
 
-  return canRender ? createElement(props.of, props.with) : null
+  return canRender ? cloneElement(element, props.with) : null
 }
 
 Mayre.defaultProps = {
@@ -16,7 +17,10 @@ Mayre.defaultProps = {
 }
 
 Mayre.propTypes = {
-  of: PropTypes.func.isRequired,
+  of: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.func
+  ]).isRequired,
   when: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func
