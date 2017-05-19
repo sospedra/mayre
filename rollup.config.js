@@ -5,7 +5,7 @@ import uglify from 'rollup-plugin-uglify'
 
 export default {
   entry: 'src/index.js',
-  dest: 'build/bundle.min.js',
+  dest: 'build/mayre.min.js',
   format: 'cjs',
   moduleName: 'mayre',
   plugins: [
