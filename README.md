@@ -12,7 +12,7 @@ While working with React you'll find yourself making conditionals
 components quite a lot of times. And they're always the same: a component which
 upon a set of conditions may render or just return null (or short-circuit it).
 
-Here comes Mayre (May**b**e render)! A very simple and ultra light (533 bytes) 
+Here comes Mayre (May**b**e render)! A very simple and ultra light (533 bytes)
 component to tackle this issue from the `jsx` side.
 
 Compatible with *React*, *React-Native* and *ReactVR*.
@@ -29,13 +29,23 @@ There are three props you can use: `of`, `when` and `whith`.
 />
 ```
 
+Note that `of` can be a component instance or declaration. And when can be boolean
+or a function.
+
+```js
+<Mayre
+  of={<p>Something</p>}
+  when={() => checkWhatever()}
+/>
+```
+
 ### Props
 
-| Name | Required | Default   | Comment                              |
-|------|----------|-----------|--------------------------------------|
-| of   | Yes      | -         | The React component to be rendered   |
-| when | No       | `false`   | The render condition                 |
-| with | No       | `{}`      | Props to be passed to `of` component |
+| Name | Required | Default | Type              |Comment                              |
+|------|----------|---------|-------------------|-------------------------------------|
+| of   | Yes      | -       | `func`, `element` | The React component to be rendered  |
+| when | No       | `false` | `bool`, `func`    |The render condition                 |
+| with | No       | `{}`    | `object`          |Props to be passed to `of` component |
 
 ### Benefit
 
