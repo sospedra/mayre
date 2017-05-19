@@ -1,4 +1,29 @@
 {
+  "name": "mayre",
+  "description": "Maybe render a React component, maybe not 😮",
+  "version": "1.0.0",
+  "main": "dist/mayre.min.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sospedra/mayre.git"
+  },
+  "keywords": [
+    "mayre",
+    "maybe",
+    "render",
+    "react",
+    "component",
+    "conditional"
+  ],
+  "author": "Ruben Sospedra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sospedra/mayre/issues"
+  },
+  "homepage": "https://github.com/sospedra/mayre#readme",
   "dependencies": {
     "lodash.isfunction": "^3.0.8",
     "prop-types": "^15.5.10",
@@ -25,30 +50,5 @@
     "pretest": "npm run build",
     "test": "npm run test:unit",
     "test:unit": "jest"
-  },
-  "name": "mayre",
-  "description": "Mayre =====",
-  "version": "1.0.0",
-  "main": "dist/mayre.min.js",
-  "directories": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sospedra/mayre.git"
-  },
-  "keywords": [
-    "mayre",
-    "maybe",
-    "render",
-    "react",
-    "component",
-    "conditional"
-  ],
-  "author": "Ruben Sospedra",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sospedra/mayre/issues"
-  },
-  "homepage": "https://github.com/sospedra/mayre#readme"
+  }
 }
