@@ -15,6 +15,8 @@ upon a set of conditions may render or just return null (or short-circuit it).
 Here comes Mayre (May**b**e render)! A very simple and ultra light (4k) component
 to tackle this issue from the `jsx` side.
 
+Compatible with *React*, *React-Native* and *ReactVR*.
+
 ### Usage
 
 There are three props you can use: `of`, `when` and `whith`.
@@ -34,3 +36,22 @@ There are three props you can use: `of`, `when` and `whith`.
 | of   | Yes      | -         | The React component to be rendered   |
 | when | No       | `false`   | The render condition                 |
 | with | No       | `{}`      | Props to be passed to `of` component |
+
+### Benefit
+
+Stop doing this. No more.
+
+```js
+// no more dumb render methods pollution
+const renderSomething = (canRender, propsFromParent) => {
+  if (!canRender) return null
+
+  return <Something {...propsFromParent} />
+}
+
+const Parent = (props) => (
+  <div>
+    {renderSomething(props.a === props.b, props)}
+  </div>
+)
+```
