@@ -5,7 +5,7 @@ const isFunction = (target) => {
   return target && ({}).toString.call(target) === '[object Function]'
 }
 
-const Mayre = (props) => {
+const Mayre = module.exports = (props) => {
   const canRender = isFunction(props.when) ? props.when() : props.when
 
   return canRender ? createElement(props.of, props.with) : null
@@ -23,5 +23,3 @@ Mayre.propTypes = {
   ]),
   with: PropTypes.object
 }
-
-export default Mayre
