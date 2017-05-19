@@ -1,7 +1,7 @@
 {
   "name": "mayre",
   "description": "Maybe render a React component, maybe not 😮",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "dist/mayre.min.js",
   "directories": {
     "test": "test"
@@ -40,7 +40,8 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^1.0.2",
-    "standard": "^10.0.2"
+    "standard": "^10.0.2",
+    "uglify-js-harmony": "^2.7.7"
   },
   "peerDependencies": {
     "prop-types": "15.5.10",

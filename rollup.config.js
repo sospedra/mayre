@@ -1,6 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import uglify from 'rollup-plugin-uglify'
+import { minify } from 'uglify-js-harmony'
 
 export default {
   entry: 'src/index.js',
@@ -15,7 +16,7 @@ export default {
         'node_modules/react/react.js': ['createElement']
       }
     }),
-    uglify()
+    uglify({}, minify)
   ],
   sourceMap: true
 }
