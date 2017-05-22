@@ -8,6 +8,12 @@ Maybe render a React component, maybe not 😮
 [![Code Climate](https://codeclimate.com/github/sospedra/mayre/badges/gpa.svg)](https://codeclimate.com/github/sospedra/mayre)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+```
+// Get it!
+yarn add mayre
+npm install --save mayre
+```
+
 While working with React you'll find yourself making conditionals
 components quite a lot of times. And they're always the same: a component which
 upon a set of conditions may render or just return null (or short-circuit it).
