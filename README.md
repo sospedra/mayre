@@ -19,7 +19,7 @@ Compatible with *React*, *React-Native* and *ReactVR*.
 
 ### Usage
 
-There are three props you can use: `of`, `when` and `whith`.
+There are three props you can use: `of`, `when` and `with`.
 
 ```js
 <Mayre
