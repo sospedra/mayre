@@ -1,5 +1,4 @@
-Mayre
-=====
+# <a href='https://github.com/sospedra/mayre'><img src='https://cloud.githubusercontent.com/assets/3116899/26548775/19e2557e-4476-11e7-86fa-831315d58cb0.png' height='60'></a>
 
 Maybe render a React component, maybe not 😮
 
