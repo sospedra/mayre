@@ -6,13 +6,18 @@ const isFunction = (target) => {
 }
 
 const Mayre = module.exports = (props) => {
-  const canRender = isFunction(props.when) ? props.when() : props.when
+  const shallRenderOf = isFunction(props.when) ? props.when() : props.when
   const element = isFunction(props.of) ? props.of(props.with) : props.of
+  const eitherProps = props.orWith || props.with
+  const either = isFunction(props.or) ? props.or(eitherProps) : props.or
 
-  return canRender ? cloneElement(element, props.with) : null
+  return shallRenderOf
+    ? cloneElement(element, props.with)
+    : either && cloneElement(either, eitherProps)
 }
 
 Mayre.defaultProps = {
+  or: null,
   with: {}
 }
 
@@ -21,6 +26,11 @@ Mayre.propTypes = {
     PropTypes.element,
     PropTypes.func
   ]).isRequired,
+  or: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.func
+  ]),
+  orWith: PropTypes.object,
   when: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func
