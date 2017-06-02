@@ -6,7 +6,7 @@ import './App.css';
 const MAX_COUNTER = 5;
 
 const Conditional = (props) => (
-  <h2>I'll disappear when {props.name} gets to {MAX_COUNTER}</h2>
+  <h2>I will disappear when {props.name} gets to {MAX_COUNTER}</h2>
 )
 
 class App extends Component {
@@ -41,8 +41,10 @@ class App extends Component {
           />
 
           <Mayre
-            of={<h4>And I'll disappear when gets to the double</h4>}
+            of={({ text }) => <h4>{text}</h4>}
+            or={({ text }) => <h3>{text}</h3>}
             when={this.state.counter < MAX_COUNTER * 2}
+            with={{ text: 'And I will change the size when gets to the 10' }}
           />
         </div>
       </div>

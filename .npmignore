@@ -1,5 +1,6 @@
 demo
 test
+src
 .travis.yml
 yarn.lock
 rollup.config.js
