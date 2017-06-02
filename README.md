@@ -24,6 +24,8 @@ Compatible with *React*, *React-Native* and *ReactVR*.
 
 ### Usage
 
+#### Maybe
+
 There are three props you can use: `of`, `when` and `with`.
 
 ```js
@@ -44,17 +46,44 @@ or a function.
 />
 ```
 
+#### Either
+
+But not only this! Conditional rendering isn't only about mount this component
+or not. We can also use Mayre to render either this element or the other.
+
+```js
+<Mayre
+  of={<p>Either this</p>}
+  or={<p>Or this one</p>}
+  when={whateverCondition}
+/>
+```
+
+If a `with` prop is provided it'll be applied to both of them. If you want to specify special props for each of them use `orWith`.
+
+```js
+<Mayre
+  of={<p>Either this</p>}
+  or={<p>Or this one</p>}
+  when={whateverCondition}
+  with={{ appliedTo: 'of' }}
+  orWith={{ appliedTo: 'this will used by or element' }}
+/>
+```
+
 ### Props
 
-| Name | Required | Default | Type              |Comment                              |
-|------|----------|---------|-------------------|-------------------------------------|
-| of   | Yes      | -       | `func`, `element` | The React component to be rendered  |
-| when | No       | `false` | `bool`, `func`    |The render condition                 |
-| with | No       | `{}`    | `object`          |Props to be passed to `of` component |
+| Name   | Required | Default | Type              |Comment                                 |
+|--------|----------|---------|-------------------|----------------------------------------|
+| of     | Yes      | -       | `func`, `element` | The React component to be rendered     |
+| or     | No       | `null`  | `func`, `element` | The React component rendered instead of `of`  |
+| when   | No       | `false` | `bool`, `func`    | The render condition                    |
+| with   | No       | `{}`    | `object`          | Props to be passed to `of/or` component |
+| orWith | No       | `{}`    | `object`          | Props to be passed to `or` component    |
 
 ### Benefit
 
-Stop doing this. No more.
+Stop doing this:
 
 ```js
 // no more dumb render methods pollution
