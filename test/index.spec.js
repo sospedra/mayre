@@ -5,6 +5,7 @@ import { render } from 'enzyme'
 import Mayre from '../dist/mayre.min'
 
 const Tryout = (props) => <p id='tryout'>{props.name}</p>
+const Either = (props) => <p id='either'>{props.name}</p>
 
 describe('Mayre suite', () => {
   it('should render any component through `of` and `when`', () => {
@@ -33,5 +34,40 @@ describe('Mayre suite', () => {
   it('should choose if render any component with a function condition through `when`', () => {
     const wrapper = render(<Mayre of={Tryout} when={() => true} />)
     expect(wrapper.find('#tryout').length).toBe(1)
+  })
+
+  it('should render either `of` or if provided `or`', () => {
+    const wrapper = render(<Mayre of={Tryout} or={Either} when={false} />)
+    expect(wrapper.find('#tryout').length).toBe(0)
+    expect(wrapper.find('#either').length).toBe(1)
+  })
+
+  it('should render either `or` using `with` props if provided', () => {
+    const name = 'Starlord'
+    const wrapper = render(<Mayre
+      of={Tryout}
+      or={Either}
+      when={false}
+      with={{ name }}
+    />)
+
+    expect(wrapper.find('#tryout').length).toBe(0)
+    expect(wrapper.find('#either').length).toBe(1)
+    expect(wrapper.find('#either').text()).toBe(name)
+  })
+
+  it('should render either `or` using `orWith` over `with` props if provided', () => {
+    const name = 'Rocket'
+    const wrapper = render(<Mayre
+      of={Tryout}
+      or={Either}
+      when={false}
+      with={{ name: 'Drax' }}
+      orWith={{ name }}
+    />)
+
+    expect(wrapper.find('#tryout').length).toBe(0)
+    expect(wrapper.find('#either').length).toBe(1)
+    expect(wrapper.find('#either').text()).toBe(name)
   })
 })
