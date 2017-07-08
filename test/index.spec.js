@@ -70,4 +70,31 @@ describe('Mayre suite', () => {
     expect(wrapper.find('#either').length).toBe(1)
     expect(wrapper.find('#either').text()).toBe(name)
   })
+
+  it('should pick the given keys for a provided object', () => {
+    const parentProps = { name: 'Groot', height: 'Variable' }
+    const wrapper = render(<Mayre
+      of={Tryout}
+      when
+      with={[parentProps, 'name']}
+    />)
+
+    expect(wrapper.find('#tryout').length).toBe(1)
+    expect(wrapper.find('#tryout').text()).toBe(parentProps.name)
+  })
+
+  it('should pick the given keys for a provided object when either is used', () => {
+    const parentProps = { name: 'Groot', height: 'Variable' }
+    const wrapper = render(<Mayre
+      of={Tryout}
+      or={Either}
+      when={false}
+      with={{ name: 'Drax' }}
+      orWith={[parentProps, 'name']}
+    />)
+
+    expect(wrapper.find('#tryout').length).toBe(0)
+    expect(wrapper.find('#either').length).toBe(1)
+    expect(wrapper.find('#either').text()).toBe(parentProps.name)
+  })
 })
