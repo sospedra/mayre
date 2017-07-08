@@ -71,6 +71,22 @@ If a `with` prop is provided it'll be applied to both of them. If you want to sp
 />
 ```
 
+#### Auto props picking
+
+Most of the times the component rendered by Mayre is a subset of a bigger one.
+Hence, it's using a selection of the parent props. That's why Mayre has a special
+syntax to pick the props you need to while passing them down.
+
+```js
+<Mayre
+  of={MyComponent}
+  when={props.something > 10}
+  with={[props, 'thisProps', 'andThisOther']}
+/>
+```
+
+Same can be applied for `orWith` attribute.
+
 ### Props
 
 | Name   | Required | Default | Type              |Comment                                 |
@@ -78,8 +94,8 @@ If a `with` prop is provided it'll be applied to both of them. If you want to sp
 | of     | Yes      | -       | `func`, `element` | The React component to be rendered     |
 | or     | No       | `null`  | `func`, `element` | The React component rendered instead of `of`  |
 | when   | No       | `false` | `bool`, `func`    | The render condition                    |
-| with   | No       | `{}`    | `object`          | Props to be passed to `of/or` component |
-| orWith | No       | `{}`    | `object`          | Props to be passed to `or` component    |
+| with   | No       | `{}`    | `object`, `array` | Props to be passed to `of/or` component |
+| orWith | No       | `{}`    | `object`, `array` | Props to be passed to `or` component    |
 
 ### Benefit
 
