@@ -47,7 +47,10 @@ Mayre.propTypes = {
     PropTypes.element,
     PropTypes.func
   ]),
-  orWith: PropTypes.object,
+  orWith: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
   when: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func
