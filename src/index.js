@@ -1,4 +1,4 @@
-const { cloneElement } = require('react')
+const { cloneElement, createElement, isValidElement } = require('react')
 const PropTypes = require('prop-types')
 
 const isFunction = (target) => {
@@ -7,6 +7,12 @@ const isFunction = (target) => {
 
 const isObject = (target, isArray = false) => {
   return typeof target === 'object' && target.hasOwnProperty('length') === isArray
+}
+
+const composeElement = (candidate, props) => {
+  return isValidElement(candidate)
+    ? cloneElement(candidate, props)
+    : createElement(candidate, props)
 }
 
 const selectWithProps = (withProps) => {
@@ -23,14 +29,16 @@ const selectWithProps = (withProps) => {
 
 const Mayre = module.exports = (props) => {
   const shallRenderOf = isFunction(props.when) ? props.when() : props.when
-  const ofProps = selectWithProps(props.with)
-  const element = isFunction(props.of) ? props.of(ofProps) : props.of
-  const eitherProps = props.orWith ? selectWithProps(props.orWith) : ofProps
-  const either = isFunction(props.or) ? props.or(eitherProps) : props.or
 
-  return shallRenderOf
-    ? cloneElement(element, ofProps)
-    : either && cloneElement(either, eitherProps)
+  // Avoid unnecessary evaluation
+  if (!shallRenderOf && !props.or) return null
+
+  const ofProps = selectWithProps(props.with)
+  const element = composeElement(props.of, ofProps)
+  const eitherProps = props.orWith ? selectWithProps(props.orWith) : ofProps
+  const either = composeElement(props.or, eitherProps)
+
+  return shallRenderOf ? element : either
 }
 
 Mayre.defaultProps = {

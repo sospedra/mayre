@@ -2,10 +2,14 @@
 import React from 'react'
 import { render } from 'enzyme'
 
-import Mayre from '../dist/mayre.min'
+// import Mayre from '../dist/mayre.min'
+import Mayre from '../src'
 
 const Tryout = (props) => <p id='tryout'>{props.name}</p>
 const Either = (props) => <p id='either'>{props.name}</p>
+class ClassComponent extends React.Component {
+  render () { return <p id='classy'>{this.props.name}</p> }
+}
 
 describe('Mayre suite', () => {
   it('should render any component through `of` and `when`', () => {
@@ -31,6 +35,14 @@ describe('Mayre suite', () => {
     expect(wrapper.find('#tryout').text()).toBe(name)
   })
 
+  it('should render any Class component with props through `with`', () => {
+    const name = 'Gamora'
+    const wrapper = render(<Mayre of={ClassComponent} when with={{ name }} />)
+
+    expect(wrapper.find('#classy').length).toBe(1)
+    expect(wrapper.find('#classy').text()).toBe(name)
+  })
+
   it('should choose if render any component with a function condition through `when`', () => {
     const wrapper = render(<Mayre of={Tryout} when={() => true} />)
     expect(wrapper.find('#tryout').length).toBe(1)
@@ -40,6 +52,12 @@ describe('Mayre suite', () => {
     const wrapper = render(<Mayre of={Tryout} or={Either} when={false} />)
     expect(wrapper.find('#tryout').length).toBe(0)
     expect(wrapper.find('#either').length).toBe(1)
+  })
+
+  it('should render any Class component as an Either', () => {
+    const wrapper = render(<Mayre of={Tryout} or={ClassComponent} when={false} />)
+    expect(wrapper.find('#tryout').length).toBe(0)
+    expect(wrapper.find('#classy').length).toBe(1)
   })
 
   it('should render either `or` using `with` props if provided', () => {
