@@ -33,6 +33,7 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^2.8.2",
     "jest": "^20.0.3",
+    "react": "^15.0.0",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
     "rollup": "^0.41.6",
@@ -56,6 +57,7 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "prepublish": "npm run build",
     "pretest": "npm run build",
     "test": "npm run test:style && npm run test:unit",
     "test:style": "standard",
