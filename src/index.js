@@ -35,10 +35,15 @@ const Mayre = module.exports = (props) => {
 
   const ofProps = selectWithProps(props.with)
   const element = composeElement(props.of, ofProps)
+
+  // If of element is gonna be render don't evaluate either
+  if (shallRenderOf) return element
+
   const eitherProps = props.orWith ? selectWithProps(props.orWith) : ofProps
   const either = composeElement(props.or, eitherProps)
 
-  return shallRenderOf ? element : either
+  // Else return the Either element
+  return either
 }
 
 Mayre.defaultProps = {

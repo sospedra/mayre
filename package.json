@@ -26,7 +26,6 @@
   "homepage": "https://github.com/sospedra/mayre#readme",
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.5.4"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
@@ -45,8 +44,7 @@
     "uglify-js-harmony": "^2.7.7"
   },
   "peerDependencies": {
-    "prop-types": "15.5.10",
-    "react": "15.5.4"
+    "react": "15.x"
   },
   "standard": {
     "ignore": "demo"
