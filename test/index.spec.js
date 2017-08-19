@@ -2,8 +2,7 @@
 import React from 'react'
 import { render } from 'enzyme'
 
-// import Mayre from '../dist/mayre.min'
-import Mayre from '../src'
+import Mayre from '../dist/mayre.min'
 
 const Tryout = (props) => <p id='tryout'>{props.name}</p>
 const Either = (props) => <p id='either'>{props.name}</p>

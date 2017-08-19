@@ -1,7 +1,7 @@
 {
   "name": "mayre",
   "description": "Maybe render a React component, maybe not 😮",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "main": "dist/mayre.min.js",
   "directories": {
     "test": "test"
@@ -25,8 +25,7 @@
   },
   "homepage": "https://github.com/sospedra/mayre#readme",
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4"
+    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
@@ -45,8 +44,7 @@
     "uglify-js-harmony": "^2.7.7"
   },
   "peerDependencies": {
-    "prop-types": "15.5.10",
-    "react": "15.5.4"
+    "react": "15.x"
   },
   "standard": {
     "ignore": "demo"
