@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/sospedra/mayre#readme",
   "dependencies": {
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
