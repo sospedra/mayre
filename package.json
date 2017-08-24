@@ -1,7 +1,7 @@
 {
   "name": "mayre",
   "description": "Maybe render a React component, maybe not 😮",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "main": "dist/mayre.min.js",
   "directories": {
     "test": "test"
