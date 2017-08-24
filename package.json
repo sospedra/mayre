@@ -25,13 +25,13 @@
   },
   "homepage": "https://github.com/sospedra/mayre#readme",
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel-cli": "next",
     "babel-core": "next",
     "babel-jest": "^20.0.3",
-    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "next",
     "enzyme": "^2.8.2",
