@@ -34,8 +34,12 @@
     "@babel/preset-react": "^7.7.0",
     "@babel/register": "^7.7.0",
     "babel-jest": "^24.9.0",
+    "core-js": "3",
     "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "jest": "^24.9.0",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
@@ -54,12 +58,17 @@
     "ignore": "demo"
   },
   "jest": {
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
+    "testEnvironment": "enzyme",
     "testPathIgnorePatterns": [
       "<rootDir>/demo"
     ]
   },
   "scripts": {
     "build": "rollup -c",
+    "prepublish": "npm run build",
     "pretest": "npm run build",
     "test": "npm run test:style && npm run test:unit",
     "test:style": "standard",

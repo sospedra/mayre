@@ -1,7 +1,6 @@
-/* global describe, expect, it */
+/* global describe, expect, it, Enzyme */
 import React from 'react'
 import { render } from 'enzyme'
-
 import Mayre from '../dist/mayre.min'
 
 const Tryout = (props) => <p id='tryout'>{props.name}</p>
@@ -61,12 +60,14 @@ describe('Mayre suite', () => {
 
   it('should render either `or` using `with` props if provided', () => {
     const name = 'Starlord'
-    const wrapper = render(<Mayre
-      of={Tryout}
-      or={Either}
-      when={false}
-      with={{ name }}
-    />)
+    const wrapper = render(
+      <Mayre
+        of={Tryout}
+        or={Either}
+        when={false}
+        with={{ name }}
+      />
+    )
 
     expect(wrapper.find('#tryout').length).toBe(0)
     expect(wrapper.find('#either').length).toBe(1)
@@ -75,13 +76,15 @@ describe('Mayre suite', () => {
 
   it('should render either `or` using `orWith` over `with` props if provided', () => {
     const name = 'Rocket'
-    const wrapper = render(<Mayre
-      of={Tryout}
-      or={Either}
-      when={false}
-      with={{ name: 'Drax' }}
-      orWith={{ name }}
-    />)
+    const wrapper = render(
+      <Mayre
+        of={Tryout}
+        or={Either}
+        when={false}
+        with={{ name: 'Drax' }}
+        orWith={{ name }}
+      />
+    )
 
     expect(wrapper.find('#tryout').length).toBe(0)
     expect(wrapper.find('#either').length).toBe(1)
@@ -90,11 +93,13 @@ describe('Mayre suite', () => {
 
   it('should pick the given keys for a provided object', () => {
     const parentProps = { name: 'Groot', height: 'Variable' }
-    const wrapper = render(<Mayre
-      of={Tryout}
-      when
-      with={[parentProps, 'name']}
-    />)
+    const wrapper = render(
+      <Mayre
+        of={Tryout}
+        when
+        with={[parentProps, 'name']}
+      />
+    )
 
     expect(wrapper.find('#tryout').length).toBe(1)
     expect(wrapper.find('#tryout').text()).toBe(parentProps.name)
@@ -102,13 +107,15 @@ describe('Mayre suite', () => {
 
   it('should pick the given keys for a provided object when either is used', () => {
     const parentProps = { name: 'Groot', height: 'Variable' }
-    const wrapper = render(<Mayre
-      of={Tryout}
-      or={Either}
-      when={false}
-      with={{ name: 'Drax' }}
-      orWith={[parentProps, 'name']}
-    />)
+    const wrapper = render(
+      <Mayre
+        of={Tryout}
+        or={Either}
+        when={false}
+        with={{ name: 'Drax' }}
+        orWith={[parentProps, 'name']}
+      />
+    )
 
     expect(wrapper.find('#tryout').length).toBe(0)
     expect(wrapper.find('#either').length).toBe(1)

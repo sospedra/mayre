@@ -1,7 +1,11 @@
 {
   "presets": [
-    ["es2015", {
-      "modules": false
-    }]
+    [
+      "@babel/preset-env",
+      {
+        "corejs": "3",
+        "useBuiltIns": "entry"
+      }
+    ]
   ]
 }
