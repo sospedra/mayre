@@ -1,0 +1,13 @@
+import * as React from 'react'
+
+type Props = object | [object, ...(string)[]]
+
+declare export var Mayre: React.ComponentClass<{
+  of: React.ReactNode
+  or?: React.ReactNode
+  orWith?: Props
+  when?: boolean | ((...args?: any[]) => boolean)
+  with?: Props
+}>
+
+declare export default typeof Mayre
