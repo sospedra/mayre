@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import Mayre from 'mayre';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Mayre from 'mayre'
+import './App.css'
 
-const MAX_COUNTER = 5;
+const MAX_COUNTER = 5
 
 const Conditional = (props) => (
   <h2>I will disappear when {props.name} gets to {MAX_COUNTER}</h2>
@@ -11,14 +10,14 @@ const Conditional = (props) => (
 
 class App extends Component {
   constructor(props) {
-    super(props);
-    this.updateCounter = this.updateCounter.bind(this);
-    this.state = { counter: 0 };
+    super(props)
+    this.updateCounter = this.updateCounter.bind(this)
+    this.state = { counter: 0 }
   }
 
   updateCounter(diff) {
     return () => {
-      this.setState({ counter: this.state.counter + diff });
+      this.setState({ counter: this.state.counter + diff })
     }
   }
 
@@ -26,7 +25,6 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Mayre demo</h2>
         </div>
         <div className="App-intro">
@@ -48,8 +46,8 @@ class App extends Component {
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,14 +1,17 @@
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
-import uglify from 'rollup-plugin-uglify'
-import { minify } from 'uglify-js-harmony'
 import babel from 'rollup-plugin-babel'
+import { uglify } from 'rollup-plugin-uglify'
+import { minify } from 'uglify-js'
 
 export default {
-  entry: 'src/index.js',
-  dest: 'dist/mayre.min.js',
-  format: 'cjs',
-  moduleName: 'mayre',
+  input: 'src/index.js',
+  output: {
+    name: 'mayre',
+    file: 'dist/mayre.min.js',
+    format: 'cjs',
+    sourcemap: true
+  },
   plugins: [
     resolve(),
     commonjs({
@@ -21,6 +24,5 @@ export default {
       exclude: 'node_modules/**'
     }),
     uglify({}, minify)
-  ],
-  sourceMap: true
+  ]
 }

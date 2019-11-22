@@ -6,7 +6,7 @@ const isFunction = (target) => {
 }
 
 const isObject = (target, isArray = false) => {
-  return typeof target === 'object' && target.hasOwnProperty('length') === isArray
+  return typeof target === 'object' && Object.prototype.hasOwnProperty.call(target, 'length') === isArray
 }
 
 const composeElement = (candidate, props) => {
